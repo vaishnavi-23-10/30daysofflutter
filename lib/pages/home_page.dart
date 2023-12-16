@@ -1,3 +1,4 @@
+import 'package:appmake/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatelessWidget {
@@ -9,6 +10,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurpleAccent,
         title: Text("HomePage"),
       ),
       body: Center(
@@ -16,7 +18,7 @@ class Homepage extends StatelessWidget {
           child: Text("Welcome to $days days of flutter by $name"),
         ),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }
