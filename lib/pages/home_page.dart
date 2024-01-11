@@ -1,4 +1,6 @@
+import 'package:appmake/models/catalog.dart';
 import 'package:appmake/widgets/drawer.dart';
+import 'package:appmake/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatelessWidget {
@@ -12,9 +14,16 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: Text("HomePage"),
       ),
-      body: Center(
-        child: Container(
-          child: Text(context.runtimeType.toString()),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: CatalogModel.Items.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ItemWidget(
+              item: CatalogModel.Items[index],
+              //key: null,
+            );
+          },
         ),
       ),
       drawer: MyDrawer(),
